@@ -9,7 +9,7 @@ const Nav = () => {
     const { data: session } = useSession();
     // const [login, setlogin] = useState(true);
     const [providers, setProviders] = useState(null);
-    const [toggleDropdown, setToggleDropdown] = useState(false);
+    const [Dropdown, setDropdown] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -82,7 +82,7 @@ const Nav = () => {
                             height={37}
                             className='rounded-full'
                             alt='profile'
-                            onClick={() => setToggleDropdown(!toggleDropdown)}
+                            onClick={() => setDropdown(!Dropdown)}
                         />
 
                         {toggleDropdown && (
@@ -90,21 +90,21 @@ const Nav = () => {
                                 <Link
                                     href='/profile'
                                     className='dropdown_link'
-                                    onClick={() => setToggleDropdown(false)}
+                                    onClick={() => setDropdown(false)}
                                 >
                                     My Profile
                                 </Link>
                                 <Link
                                     href='/create-prompt'
                                     className='dropdown_link'
-                                    onClick={() => setToggleDropdown(false)}
+                                    onClick={() => setDropdown(false)}
                                 >
                                     Create Prompt
                                 </Link>
                                 <button
                                     type='button'
                                     onClick={() => {
-                                        setToggleDropdown(false);
+                                        setDropdown(false);
                                         signOut();
                                     }}
                                     className='mt-5 w-full black_btn'
